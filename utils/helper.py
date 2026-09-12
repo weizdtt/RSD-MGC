@@ -19,11 +19,6 @@ class Preserving:
             print("------------------Model Saving------------------")
             torch.save(self.best_model, os.path.join(self.model_path, self.opt.data_name + '.pth'))
 
-        print('------------------Best Accuracy: {}------------------'.format(self.best_result['acc']))
-        print('---------------------Best MNI: {}--------------------'.format(self.best_result['nmi']))
-        print('---------------------Best ARI: {}--------------------'.format(self.best_result['ari']))
-        print('-------------------Best Purity: {}-------------------'.format(self.best_result['pur']))
-
     def __result_comparing(self, result, features):
         if self.best_result['acc'] == 0:
             for ind, key in enumerate(self.best_result.keys()):
